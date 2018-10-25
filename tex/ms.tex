@@ -1,53 +1,63 @@
+\documentclass[modern]{aastex62}
+
 % Load the corTeX style definitions
-\documentclass[modern]{aastex61}
 \input{cortex}
+
+% Bibliography stuff
+\bibliographystyle{aasjournal}
 
 % Begin!
 \begin{document}
 
 % Title
-\title{This is a title}
+\title{\textsc{corTeX}: Continuous Integration for Scientific Articles}
 
 % Author list
-\author{Author Name}
-\email{author@email.edu}
-\affil{Author~Affiliation, University~of~Something, Somewhere}
-
-% Kewywords
-\keywords{keywords here}
-
-% Abstract
-\begin{abstract}
-This is an abstract!
-\end{abstract}
+\author[0000-0002-0296-3826]{Rodrigo Luger}
+\email{rluger@flatironinstitute.edu}
+\affil{Center~for~Computational~Astrophysics, Flatiron~Institute, New~York, NY}
+%
+\author[0000-0002-9328-5652]{Daniel Foreman-Mackey}
+\affil{Center~for~Computational~Astrophysics, Flatiron~Institute, New~York, NY}
 
 % Introduction
-\section{Introduction}
+\section*{The Long and Short of it}
 \label{sec:intro}
+%
+\textsc{corTeX} is a very simple \textsf{GitHub} repository aimed at making
+it easy to make your scientific articles open source and reproducible.
+\textsc{corTeX} currently does two things. First, it defines the
+\textsf{\textbackslash oscaption} command, which adds
+links to all figure captions pointing to the exact script that generated it;
+see Figure~\ref{fig:pretty_function}.
+%
+\begin{figure}[h!]
+    \begin{centering}
+    \includegraphics[width=0.5\linewidth]{figures/pretty_function.pdf}
+    \oscaption{pretty_function}{%
+        This is a plot of a pretty function. And at the end of this
+        caption is a symbol with a link to the \emph{exact} script
+        that generated it, hosted on \textsf{GitHub}.
+        \label{fig:pretty_function}
+    }
+    \end{centering}
+\end{figure}
+%
 
-This is an equation:
-
-% Equation
+Second, it defines the \textsf{\textbackslash proof} environment, which
+adds a link to any equation pointing to a proof, derivation, or
+verification of the equation in the form of a \textsf{Jupyter} notebook:
+%
 \begin{proof}{euler}
     \label{eq:euler}
     e^{i\pi} + 1 = 0.
 \end{proof}
-
-% Figure
-\begin{figure}[t!]
-    \begin{centering}
-    \includegraphics[width=0.5\linewidth]{figures/pretty_function.pdf}
-    \caption{\label{fig:pretty_function}
-             A pretty function.
-             \codelink{pretty_function}
-             }
-    \end{centering}
-\end{figure}
-
-Figure~\ref{fig:pretty_function} is a figure. And \citet{Luger2018} is
-a citation.
+%
+Check out \citet{Luger2018} for an example of a paper that uses these
+features.
 
 % Bibliography
+\pagebreak
 \bibliography{bib}
 
 \end{document}

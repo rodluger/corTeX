@@ -1,26 +1,13 @@
 % All the packages
-\usepackage{microtype}
 \usepackage{url}
 \usepackage{amsmath}
 \usepackage{mathtools}
-\usepackage{esint}
 \usepackage{amssymb}
 \usepackage{natbib}
-\usepackage{multirow}
 \usepackage{graphicx}
-\usepackage{scalerel}
 \usepackage{calc}
 \usepackage{etoolbox}
-\usepackage{marginnote}
-\usepackage{nicefrac}
-\usepackage{tabstackengine}
-\usepackage{diagbox}
-\usepackage[makeroom]{cancel}
-\usepackage{mathdots}
-\usepackage{bbm}
-\usepackage{booktabs}
 \usepackage{xspace}
-\usepackage{upgreek}
 \usepackage[T1]{fontenc} % https://tex.stackexchange.com/a/166791
 \usepackage{textcomp}
 \usepackage{ifxetex}
@@ -30,11 +17,8 @@
 \fi
 \usepackage{fontawesome}
 \usepackage{listings}
-\usepackage{mathtools}
-\stackMath
 
-% Bibliography stuff
-\bibliographystyle{aasjournal}
+
 
 % Shorthand for this paper
 \newcommand{\Python}{\textsf{Python}\xspace}
@@ -56,11 +40,9 @@
 \newcommand{\prooficon}{{\color{linkcolor}\faPencilSquareO}}
 \input{gitlinks}
 
-
+% Define a proof environment for open source equation proofs
 \newtagform{eqtag}[]{(}{)}
 \newcommand{\currentlabel}{None}
-
-% Define a proof environment
 \newenvironment{proof}[1]{%
 \ifstrempty{#1}{%
 \renewtagform{eqtag}[]{\raisebox{-0.1em}{{\color{red}\faPencilSquareO}}\,(}{)}%
@@ -77,22 +59,8 @@
 \message{<<<\currentlabel: \theequation>>>}%
 }
 
-% Define a proof environment
-\newenvironment{proof*}[1]{%
-\ifstrempty{#1}{%
-\renewtagform{eqtag}[]{\raisebox{-0.1em}{{\color{red}\faPencilSquareO}}\,(}{)}%
-}{%
-\renewtagform{eqtag}[]{\prooflink{#1}\,(}{)}%
-}%
-\usetagform{eqtag}%
-\renewcommand{\currentlabel}{#1}
-\equation%
-}{%
-\endequation%
-\renewtagform{eqtag}[]{(}{)}%
-\usetagform{eqtag}%
-\message{<<<\currentlabel: \theequation>>>}
-}
+% Define the `oscaption` command for open source figure captions
+\newcommand{\oscaption}[2]{\caption{#2 \codelink{#1}}}
 
 % Code examples
 \definecolor{codegreen}{rgb}{0,0.6,0}
