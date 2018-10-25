@@ -4,6 +4,9 @@ dist: trusty
 
 language: c
 
+blocklist:
+    - *-pdf
+
 matrix:
     include:
         - os: linux
