@@ -1,3 +1,7 @@
+## Misc stuff
+*.pytest_cache
+*.DS_Store
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

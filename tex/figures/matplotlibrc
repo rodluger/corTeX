@@ -1,0 +1,4 @@
+# Important: we need a non-interactive
+# matlpotlib backend for things to run
+# smoothly on Travis
+backend: agg

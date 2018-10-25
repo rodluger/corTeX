@@ -1,0 +1,53 @@
+% Load the corTeX style definitions
+\documentclass[modern]{aastex61}
+\input{cortex}
+
+% Begin!
+\begin{document}
+
+% Title
+\title{This is a title}
+
+% Author list
+\author{Author Name}
+\email{author@email.edu}
+\affil{Author~Affiliation, University~of~Something, Somewhere}
+
+% Kewywords
+\keywords{keywords here}
+
+% Abstract
+\begin{abstract}
+This is an abstract.
+\end{abstract}
+
+% Introduction
+\section{Introduction}
+\label{sec:intro}
+
+This is an equation:
+
+% Equation
+\begin{proof}{euler}
+    \label{eq:euler}
+    e^{i\pi} + 1 = 0.
+\end{proof}
+
+% Figure
+\begin{figure}[t!]
+    \begin{centering}
+    \includegraphics[width=0.5\linewidth]{figures/pretty_function.pdf}
+    \caption{\label{fig:pretty_function}
+             A pretty function.
+             \codelink{pretty_function}
+             }
+    \end{centering}
+\end{figure}
+
+Figure~\ref{fig:pretty_function} is a figure. And \citet{Luger2018} is
+a citation.
+
+% Bibliography
+\bibliography{bib}
+
+\end{document}
