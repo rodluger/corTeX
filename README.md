@@ -1,7 +1,10 @@
+<h1 align="center">
+  cortex
+</h1>
 <p align="center">
-  <h1>cortex</h1>
   Continuously-integrated Open-source Reproducible TeX
-  <br/>
+</p>
+<p align="center">
   <a href="https://travis-ci.org/rodluger/cortex/">
     <img src="https://img.shields.io/travis/rodluger/cortex/master.svg"/>
   </a>
