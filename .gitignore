@@ -1,6 +1,7 @@
 ## Misc stuff
 *.pytest_cache
 *.DS_Store
+*.ipynb_checkpoints
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
