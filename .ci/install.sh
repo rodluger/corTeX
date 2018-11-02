@@ -19,3 +19,13 @@ fi
 
 # Display some debugging info
 conda info -a
+
+# DEBUG [November 2 2018]
+# Attempt to resolve issues with SSL certificate expiring for purl.org:
+# https://tectonic.newton.cx/t/how-to-use-tectonic-if-you-can-t-access-purl-org/44
+# https://github.com/tectonic-typesetting/tectonic/issues/131
+mkdir -p $HOME/.config/Tectonic
+cat > $HOME/.config/Tectonic/config.toml << EOL
+[[default_bundles]]
+url = "https://tectonic.newton.cx/bundles/tlextras-2018.1r0/bundle.tar"
+EOL
