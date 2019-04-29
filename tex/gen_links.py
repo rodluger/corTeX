@@ -1,3 +1,4 @@
+from __future__ import print_function
 import subprocess
 import os
 hash = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode("utf-8")[:-1]
