@@ -31,7 +31,5 @@ before_script:
 script:
     # Run tests
     - py.test -v -s
-
-after_success:
     # Build and deploy the paper
     - source .ci/build-paper.sh
